@@ -24,7 +24,7 @@ greet2.apply(sally, ['Terry', 'George']);
 function greet3(customer) {
     console.log(`Hi ${customer}, my name is ${this.name}!`);
 }
- 
+
 let newGreet = greet3.bind(sally); // newGreet is context-bound to sally
 
 newGreet('Bob');
@@ -39,13 +39,13 @@ class Event {
         this.keywords = keywords;
     }
 }
- 
+
 class User {
     constructor(name, interests) {
         this.name = name;
         this.interests = interests;
     }
- 
+
     matchInterests(event) {
         return event.keywords.some(
             function(word) {
@@ -54,8 +54,8 @@ class User {
         );
     }
 }
- 
+
 let billy = new User('billy', ['music', 'art', 'movies']);
 let freeMusic = new Event('Free Music Show', ['music', 'free', 'outside']);
- 
+
 billy.matchInterests(freeMusic);
