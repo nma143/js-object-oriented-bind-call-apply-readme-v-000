@@ -11,3 +11,9 @@ let person = {
 };
 
 person.greet(); // my name is Bob, hi!
+
+let sally = { name: 'Sally' };
+function greet2(customerOne, customerTwo) {
+    console.log(`Hi ${customerOne} and ${customerTwo}, my name is ${this.name}!`);
+}
+greet2.call(sally, 'Terry', 'George');
