@@ -53,6 +53,9 @@ class User {
             }.bind(this) // added to the and of the callback function
         );
     }
+    matchInterests2(event) {
+      return event.keywords.some(word => this.interests.includes(word));
+    }
 }
 
 let billy = new User('billy', ['music', 'art', 'movies']);
