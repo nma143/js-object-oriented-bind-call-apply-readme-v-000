@@ -18,3 +18,17 @@ function greet2(customerOne, customerTwo) {
 }
 greet2.call(sally, 'Terry', 'George');
 greet2.apply(sally, ['Terry', 'George']);
+
+
+ 
+function greet3(customer) {
+    console.log(`Hi ${customer}, my name is ${this.name}!`);
+}
+ 
+let newGreet = greet3.bind(sally); // newGreet is context-bound to sally
+ 
+newGreet('Bob');
+// Hi Bob, my name is Sally!
+ 
+greet('Bob');
+// Hi Bob, my name is !
